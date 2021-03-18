@@ -1,0 +1,71 @@
+:root {
+  --light-green-bg: #9ACE49;
+  --dark-green-bg: #3D5F12;
+  --light-red-bg: #FF1A00;
+  --dark-red-bg: #E32B30;
+  --yellow-bg: #EFA818;
+  --grey-bg: #DBDBDB;
+  --white-color: #fff;
+  --grey-color: #757575;
+}
+
+.label {
+  display: inline-flex;
+  justify-content: center;
+  min-width: 50px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.label.light-green {
+  background-color: var(--light-green-bg);
+  color: var(--white-color);
+}
+
+.label.dark-green {
+  background-color: var(--dark-green-bg);
+  color: var(--white-color);
+}
+
+.label.light-red {
+  background-color: var(--light-red-bg);
+  color: var(--white-color);
+}
+
+.label.dark-red {
+  background-color: var(--dark-red-bg);
+  color: var(--white-color);
+}
+
+.label.yellow {
+  background-color: var(--yellow-bg);
+  color: var(--white-color);
+}
+
+.label.grey {
+  background-color: var(--grey-bg);
+  color: var(--grey-color);
+}
+
+.label.small {
+  padding: 4px 6px;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.label.medium {
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.label.large {
+  padding: 16px 24px;
+  font-size: 18px;
+  line-height: 20px;
+}
