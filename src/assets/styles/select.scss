@@ -1,3 +1,29 @@
-.header {
-  background-color: red;
+.select {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+
+  &__control {
+    position: relative;
+    z-index: 1;
+    padding-right: 22px;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    color: #000000;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
 }
