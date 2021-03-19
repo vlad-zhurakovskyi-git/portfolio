@@ -9,6 +9,8 @@ const contentComponent = (items, activeTabId) => {
 
 const Tabs = ({ items, activeId }) => {
   const [activeTabId, setActiveTab] = useState(activeId);
+  const [position, setPosition] = useState(0);
+  const containerRef = React.createRef();
 
   useEffect(() => {
     setActiveTab(activeId);
@@ -17,24 +19,40 @@ const Tabs = ({ items, activeId }) => {
   return (
     <>
       <div className="tabs">
-        <div className="tabs__list">
-          {items.map(({ name }, index) => (
-            <button
-              key={name}
-              onClick={() => setActiveTab(index)}
-              className={`tabs__item ${activeTabId === index ? 'active' : ''}`}
-            >
-              {name}
-            </button>
-          ))}
+        <div ref={containerRef} className="tabs__inner">
+          <div className="tabs__list">
+            {items.map(({ name }, index) => (
+              <button
+                key={name}
+                onClick={() => setActiveTab(index)}
+                className={`tabs__item ${activeTabId === index ? 'active' : ''}`}
+              >
+                {name}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="tabs-nav">
-          <button className="tabs-nav__btn disabled" type="button">
+          <button
+            onClick={() => {
+              containerRef.current.scrollLeft -= 150;
+              setPosition(containerRef.current.scrollLeft);
+            }}
+            className={`tabs-nav__btn ${position === 0 ? 'disabled' : '' }`}
+            type="button"
+          >
             <Icon name="caret-left"/>
           </button>
 
-          <button className="tabs-nav__btn" type="button">
+          <button
+            onClick={() => {
+              containerRef.current.scrollLeft += 150;
+              setPosition(containerRef.current.scrollLeft);
+            }}
+            className={`tabs-nav__btn ${position === 369 ? 'disabled' : '' }`}
+            type="button"
+          >
             <Icon name="caret-right"/>
           </button>
         </div>

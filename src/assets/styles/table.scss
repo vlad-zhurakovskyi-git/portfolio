@@ -1,0 +1,122 @@
+.table {
+  width: 100%;
+  border-spacing: 0;
+
+  &__th {
+    padding: 18px 8px 4px 8px;
+    border-bottom: 1px solid $dark-grey;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    color: $grey;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  &__th,
+  &__td {
+    &.symbol {
+      width: 99px;
+      text-align: left;
+    }
+
+    &.price {
+      width: 64px;
+      text-align: right;
+    }
+
+    &.change {
+      width: 66px;
+      text-align: right;
+    }
+
+    &.change-percent {
+      width: 80px;
+      text-align: right;
+    }
+
+    &.alerts {
+      width: 57px;
+      text-align: center;
+    }
+
+    &.volume {
+      width: 67px;
+      text-align: right;
+    }
+
+    &.avg  {
+      width: 69px;
+      text-align: right;
+    }
+
+    &.prev {
+      width: 85px;
+      text-align: right;
+    }
+
+    &.quant {
+      width: 71px;
+      text-align: center;
+    }
+
+    &.sa {
+      width: 78px;
+      text-align: center;
+    }
+
+    &.sell {
+      width: 70px;
+      text-align: center;
+    }
+
+    &.day,
+    &.wk {
+      width: 180px;
+      text-align: center;
+    }
+  }
+
+  &__tbody {
+    .table__tr:last-child {
+      .table__td {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &__td {
+    padding: 10px 8px;
+    border-bottom: 1px solid $light-grey;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &.number {
+      font-size: 12px;
+      line-height: 14px;
+      color: $black;
+
+      &.green {
+        color: $green;
+      }
+
+      &.red {
+        color: $red;
+      }
+    }
+
+    &.symbol {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 14px;
+      color: $blue;
+      text-transform: uppercase;
+    }
+
+
+  }
+}

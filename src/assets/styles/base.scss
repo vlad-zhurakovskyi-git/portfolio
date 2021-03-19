@@ -15,6 +15,11 @@ button, a {
   padding: 32px 0;
   font-family: $font-arial;
   background-color: $main-bg;
+
+  &__inner {
+    padding: 20px 36px;
+    background-color: $white;
+  }
 }
 
 .container {
@@ -22,4 +27,41 @@ button, a {
   min-width: 980px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.checkbox {
+  display: inline-flex;
+  cursor: pointer;
+
+  &.active {
+    .checkbox__view {
+      background-color: $green;
+      border-color: $green;
+
+      .icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  .icon {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  &__view {
+    position: relative;
+    display: block;
+    min-width: 16px;
+    height: 16px;
+    border: 1px solid $light-grey;
+    background-color: $white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.5s, border-color 0.5s;
+  }
 }

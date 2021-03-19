@@ -1,24 +1,27 @@
 .tabs {
+  position: relative;
   display: flex;
   margin-top: 32px;
   border-bottom: 1px solid $black;
 
-  &__list {
-    position: relative;
+  &:after {
+    position: absolute;
+    content: '';
+    top: -24px;
+    right: 114px;
+    width: 20px;
+    height: 70px;
+    background-image: linear-gradient(180deg, $main-bg 0%, rgba(242, 244, 247, 0) 100%);
+    transform: rotate(90deg);
+  }
+
+  &__inner {
     width: calc(100% - 80px);
     overflow: hidden;
-    white-space: nowrap;
+  }
 
-    &:after {
-      position: absolute;
-      content: '';
-      top: -24px;
-      right: 15px;
-      width: 20px;
-      height: 70px;
-      background-image: linear-gradient(180deg, $main-bg 0%, rgba(242, 244, 247, 0) 100%);
-      transform: rotate(90deg);
-    }
+  &__list {
+    white-space: nowrap;
   }
 
   &__item {
@@ -34,14 +37,14 @@
     transition: opacity 0.5s;
     outline: none;
 
-    &.active{
+    &.active,
+    &:focus {
       &:after {
         opacity: 1;
       }
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       &:after {
         opacity: 0.5;
       }
@@ -69,6 +72,13 @@
       border: none;
       color: $dark-grey;
       background-color: transparent;
+      transition: color 0.3s;
+      outline: none;
+
+      &:hover,
+      &:active {
+        color: $grey;
+      }
 
       + .tabs-nav__btn {
         margin-left: 6px;
