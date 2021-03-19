@@ -1,6 +1,7 @@
-import React  from 'react';
+import React, {useEffect, useState} from 'react';
 import Checkbox from "../Checkbox/Checkbox";
 import { Label } from "../../stories/Label/Label";
+import Range from "../Range/Range";
 
 const defineColor = (el) => {
   const getSymbol = el.indexOf('-');
@@ -21,12 +22,14 @@ const defineLabelType = (el) => {
 };
 
 const Table = ({ tableData }) => {
+  const [sortBy, setSortBy] = useState('price');
+
   return (
       <table className="table">
         <thead className="table__thead">
           <tr className="table__tr">
-            <th className="table__th symbol">Symbol</th>
-            <th className="table__th price">Price</th>
+            <th className="table__th symbol" onClick={() => setSortBy('symbol')}>Symbol</th>
+            <th className="table__th price" onClick={() => setSortBy('price')}>Price</th>
             <th className="table__th change">Change</th>
             <th className="table__th change-percent">Change %</th>
             <th className="table__th alerts">Alerts</th>
@@ -63,8 +66,12 @@ const Table = ({ tableData }) => {
               <td className="table__td sell">
                 <Label type={defineLabelType(sellSide)} label={sellSide}/>
               </td>
-              <td className="table__td day">{dayRange[0]}</td>
-              <td className="table__td wk">{wkRange[0]}</td>
+              <td className="table__td day">
+                <Range amount={dayRange} />
+              </td>
+              <td className="table__td wk">
+                <Range amount={wkRange} />
+              </td>
             </tr>
           ))}
         </tbody>

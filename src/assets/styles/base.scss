@@ -65,3 +65,33 @@ button, a {
     transition: background-color 0.5s, border-color 0.5s;
   }
 }
+
+.range {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-line {
+    position: relative;
+    width: 64px;
+    height: 4px;
+    margin: 0 10px;
+    border-bottom: 4px solid transparent;
+    background-color: $light-grey;
+
+    &__position {
+      position: absolute;
+      top: -2px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $dark-grey;
+    }
+  }
+
+  &__amount {
+    font-size: 10px;
+    line-height: 12px;
+    color: $dark-grey;
+  }
+}
