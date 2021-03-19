@@ -8,15 +8,25 @@
     z-index: 1;
     padding-right: 22px;
     border: none;
-    font-family: 'Lato', sans-serif;
+    font-family: $font-lato;
     font-size: 24px;
+    color: $black;
     font-weight: 700;
     line-height: 30px;
-    color: #000000;
     appearance: none;
-    outline: none;
     cursor: pointer;
     background-color: transparent;
+    outline: none;
+    transition: color 0.5s;
+
+    &.active,
+    &:hover {
+      color: $dark-grey;
+
+      + .icon {
+        color: $dark-grey;
+      }
+    }
   }
 
   .icon {
@@ -25,5 +35,11 @@
     top: 0;
     bottom: 0;
     margin: auto;
+    color: $black;
+    transition: color 0.5s;
+  }
+
+  option {
+    font-size: 5px;
   }
 }

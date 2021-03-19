@@ -1,0 +1,25 @@
+$font-arial: 'Arial', sans-serif;
+$font-lato: 'Lato', sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+.page {
+  min-width: 1258px;
+  height: 100vh;
+  padding: 32px 0;
+  font-family: $font-arial;
+  background-color: $main-bg;
+}
+
+.container {
+  max-width: 1258px;
+  min-width: 980px;
+  margin: 0 auto;
+  padding: 0 15px;
+}

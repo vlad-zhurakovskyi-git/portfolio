@@ -1,0 +1,49 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 7px 12px;
+  border: none;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 4px;
+  background-color: $light-grey;
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.5s;
+  outline: none;
+
+  &.primary {
+    background-color: $light-grey;
+    color: $grey;
+
+    &:hover,
+    &:focus {
+      background-color: $dark-grey;
+      color: $white;
+    }
+  }
+
+  &.secondary {
+    background-color: $black;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: $dark-grey;
+    }
+  }
+
+  &__text {
+    line-height: 12px;
+  }
+
+  &.only-icon {
+    padding: 7px;
+  }
+
+  .icon {
+    + .btn__text {
+      margin-left: 8px;
+    }
+  }
+}

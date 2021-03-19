@@ -1,3 +1,23 @@
 .header {
-  //background-color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-controls {
+    display: flex;
+    align-items: center;
+
+    &__col {
+      display: flex;
+
+     & + .header-controls__col {
+        margin-left: 18px;
+        border-left: 1px solid $light-grey;
+      }
+    }
+
+    .btn {
+      margin-left: 18px;
+    }
+  }
 }
